@@ -17,6 +17,8 @@ import pandas as pd
 import streamlit as st 
 import streamlit.components.v1 as stc 
 from order_streamlit import Record
+import matplotlib.pyplot as plt
+import matplotlib
 
 
 ####### (1) 開始設定 #######
@@ -461,8 +463,15 @@ st.write(df)
 #     st.plotly_chart(fig4, use_container_width=True)
 
 
-# ## 畫累計盈虧圖:
-# OrderRecord.GeneratorProfitChart(StrategyName='MA')
+
+# #### 定義圖表
+# matplotlib.rcParams['font.family'] = 'Noto Sans CJK JP'
+# matplotlib.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
+# ax1 = plt.subplot(2,1,1)
+# ax2 = plt.subplot(2,1,2)
+
+## 畫累計盈虧圖:
+OrderRecord.GeneratorProfitChart(StrategyName='MA')
 
 
 ## 畫累計投資報酬率圖:
